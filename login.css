@@ -1,0 +1,151 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Base Body Style */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Soft, static blue background */
+    background: #eef2f3; /* Very light grey/blue */
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+/* --------------------
+   CARD FLIP STRUCTURE (Clean and Subtle)
+   -------------------- */
+.card-container {
+    position: relative;
+    width: 350px; /* Thoda chhota kiya */
+    height: 420px;
+    transition: transform 0.6s ease-in-out; /* Simpler flip animation */
+    transform-style: preserve-3d;
+    z-index: 10;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px; /* Less rounded corners */
+    padding: 40px 30px;
+    /* Clean, soft white card with subtle shadow */
+    background: #ffffff; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border: 1px solid #f0f0f0; /* Very light border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.card-container.flipped {
+    transform: rotateY(180deg);
+}
+
+/* --------------------
+   FORM STYLING
+   -------------------- */
+.form h2 {
+    color: #333; /* Dark text */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 400; /* Lighter font weight */
+}
+
+/* Input Field Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc; /* Thin separator line */
+    outline: none;
+    color: #333;
+    font-size: 1em;
+    transition: border-bottom-color 0.3s;
+}
+
+/* Subtle Focus Effect */
+.input-group input:focus {
+    border-bottom-color: #007bff; /* Standard primary blue for focus */
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* Label movement animation on focus/filled */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -15px;
+    left: 0;
+    color: #007bff;
+    font-size: 0.75em;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    background: #007bff; /* Solid primary color */
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.submit-btn:hover {
+    background: #0056b3; /* Darker shade on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:active {
+    transform: translateY(1px); /* Simple press effect */
+}
+
+.switch-text {
+    text-align: center;
+    margin-top: 25px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.switch-text a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.switch-text a:hover {
+    color: #0056b3;
+}
+
+/* Background Animation elements are completely removed for minimalism */
